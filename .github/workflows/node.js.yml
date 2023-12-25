@@ -5,9 +5,9 @@ name: chatbox back
 
 on:
   push:
-    branches: ["develop"]
+    branches: ["develop", "main"]
   pull_request:
-    branches: ["develop"]
+    branches: ["develop", "main"]
 
 jobs:
   build:
@@ -20,6 +20,11 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
-      - run: npm run build --if-present
-      - run: npm test
+      - name: Install dependencies
+        run: npm install
+      - name: Construction
+        run: npm run build --if-present
+      - name: Lint
+        run: npm run lint
+      - name: Test
+        run: npm test
