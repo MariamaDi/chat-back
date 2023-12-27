@@ -13,7 +13,6 @@ config();
 export class ChatGateway implements OnGatewayConnection, OnGatewayDisconnect {
   @WebSocketServer()
   server: Socket;
-
   private openai: OpenAI;
   constructor() {
     this.openai = new OpenAI({
