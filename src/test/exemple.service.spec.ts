@@ -15,6 +15,6 @@ describe('ExampleService', () => {
 
   it('should add two numbers', () => {
     const result = service.add(2, 3);
-    expect(result).toBe(6);
+    expect(result).toBe(5);
   });
 });
