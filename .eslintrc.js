@@ -22,7 +22,7 @@ module.exports = {
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-explicit-any': 'off',
     'no-debugger': 'error',
-    'no-console': 'error',
+    // 'no-console': 'error',
     semi: ['error', 'always'],
   },
 };
