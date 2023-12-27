@@ -31,7 +31,7 @@ jobs:
       - name: Check breaking bug
         run: |
           # Exécutez ESLint avec votre fichier de configuration
-          npx eslint --config ../../.eslintrc.js --ignore-path ../../.gitignore .
+          npx eslint --config ../../.eslintrc.js
           # Fail the workflow if ESLint finds issues
           if [ $? -ne 0 ]; then
           echo "Found breaking bugs. PR cannot be merged."
