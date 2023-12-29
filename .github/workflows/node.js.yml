@@ -41,6 +41,9 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     steps:
+      - name: Check if Build Succeeded
+        if: success() && github.event_name == 'pull_request' && github.ref == 'refs/heads/develop'
+        run: echo "Build succeeded. Deploying Docker image."
       - name: Build and Push Docker Image
         if: github.event_name == 'pull_request' && github.ref == 'refs/heads/develop'
         run: |
