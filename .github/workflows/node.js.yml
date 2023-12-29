@@ -44,6 +44,6 @@ jobs:
       - name: Build and Push Docker Image
         if: github.event_name == 'pull_request' && github.event.pull_request.merged == true
         run: |
-          docker build -t mariamad/cicd:latest .
+          docker build -t mariamad/cicd:${{ github.ref_name }} .
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
-          docker push mariamad/cicd:latest
+          docker push mariamad/cicd:${{ github.ref_name }}
